@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>memory: allocator_reference&lt; RawAllocator, Mutex &gt; Class Template Reference</title>
+<title>memory: allocator_reference&lt; RawAllocator &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -47,15 +47,15 @@
 <a href="#pub-methods">Member Functions</a> &#124;
 <a href="#related">Related Functions</a>  </div>
   <div class="headertitle">
-<div class="title">allocator_reference&lt; RawAllocator, Mutex &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__memory.html">memory</a> &#124; <a class="el" href="group__storage.html">Allocator storage</a></div></div>  </div>
+<div class="title">allocator_reference&lt; RawAllocator &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__memory.html">memory</a> &#124; <a class="el" href="group__storage.html">Allocator storage</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class RawAllocator, class Mutex = default_mutex&gt;<br />
-class foonathan::memory::allocator_reference&lt; RawAllocator, Mutex &gt;</h3>
+<div class="textblock"><h3>template&lt;class RawAllocator&gt;<br />
+class foonathan::memory::allocator_reference&lt; RawAllocator &gt;</h3>
 
-<p>An alias template for <a class="el" href="classfoonathan_1_1memory_1_1allocator__storage.html">allocator_storage</a> using the <a class="el" href="classfoonathan_1_1memory_1_1reference__storage.html">reference_storage</a> policy with a given <code>Mutex</code>. </p>
-<p>It will store a reference to the given allocator type. The tag type <a class="el" href="structfoonathan_1_1memory_1_1any__allocator.html">any_allocator</a> enables type-erasure. The <code>Mutex</code> defaults to the <a class="el" href="group__core.html#gaee2f0e3847e0ab64384e5e8c8f1a7a27">default_mutex</a>. </p>
+<p>An alias template for <a class="el" href="classfoonathan_1_1memory_1_1allocator__storage.html">allocator_storage</a> using the <a class="el" href="classfoonathan_1_1memory_1_1reference__storage.html">reference_storage</a> policy. </p>
+<p>It will store a reference to the given allocator type. The tag type <a class="el" href="structfoonathan_1_1memory_1_1any__allocator.html">any_allocator</a> enables type-erasure. Wrap the allocator in a <a class="el" href="classfoonathan_1_1memory_1_1thread__safe__allocator.html">thread_safe_allocator</a> if you want thread safety. </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Typedefs</h2></td></tr>
@@ -66,7 +66,7 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>allocator_type</b> =
 using&#160;</td><td class="memItemRight" valign="bottom"><b>storage_policy</b> = <a class="el" href="classfoonathan_1_1memory_1_1reference__storage.html">reference_storage</a>&lt; RawAllocator &gt;</td></tr>
 <tr class="separator:a9615e22334e493ec6ef1f8588966cb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a7a0dfdee0c83539ff9725f255c81ef"><td class="memItemLeft" align="right" valign="top"><a id="a4a7a0dfdee0c83539ff9725f255c81ef"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>mutex</b> = Mutex</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>mutex</b> = <a class="el" href="structfoonathan_1_1memory_1_1no__mutex.html">no_mutex</a></td></tr>
 <tr class="separator:a4a7a0dfdee0c83539ff9725f255c81ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecf829738ba45a0c47d96f529154baf0"><td class="memItemLeft" align="right" valign="top"><a id="aecf829738ba45a0c47d96f529154baf0"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>is_stateful</b> = typename traits::is_stateful</td></tr>
@@ -116,9 +116,6 @@ Related Functions</h2></td></tr>
 <tr class="memitem:a704415b59f769d1578478a9fbbbab698"><td class="memTemplParams" colspan="2">template&lt;class RawAllocator &gt; </td></tr>
 <tr class="memitem:a704415b59f769d1578478a9fbbbab698"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfoonathan_1_1memory_1_1allocator__reference.html#a704415b59f769d1578478a9fbbbab698">make_allocator_reference</a> (RawAllocator &amp;&amp;allocator) noexcept -&gt; <a class="el" href="classfoonathan_1_1memory_1_1allocator__reference.html">allocator_reference</a>&lt; typename std::decay&lt; RawAllocator &gt;::type &gt;</td></tr>
 <tr class="separator:a704415b59f769d1578478a9fbbbab698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80260340d76adbdbc716dee05e30d84b"><td class="memTemplParams" colspan="2">template&lt;class Mutex , class RawAllocator &gt; </td></tr>
-<tr class="memitem:a80260340d76adbdbc716dee05e30d84b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classfoonathan_1_1memory_1_1allocator__reference.html#a80260340d76adbdbc716dee05e30d84b">make_allocator_reference</a> (RawAllocator &amp;&amp;allocator) noexcept -&gt; <a class="el" href="classfoonathan_1_1memory_1_1allocator__reference.html">allocator_reference</a>&lt; typename std::decay&lt; RawAllocator &gt;::type, Mutex &gt;</td></tr>
-<tr class="separator:a80260340d76adbdbc716dee05e30d84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Functions</h2>
 <a id="aa0774f4f3278b78aab48272657c8da07"></a>
@@ -688,7 +685,7 @@ Related Functions</h2></td></tr>
 </div>
 <h2 class="groupheader">Related Functions</h2>
 <a id="a704415b59f769d1578478a9fbbbab698"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a704415b59f769d1578478a9fbbbab698">&#9670;&nbsp;</a></span>make_allocator_reference() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a704415b59f769d1578478a9fbbbab698">&#9670;&nbsp;</a></span>make_allocator_reference()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -712,34 +709,6 @@ Related Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section user"><dt>Returns:\n A new \ref allocator_reference object by forwarding the allocator to the constructor.</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a80260340d76adbdbc716dee05e30d84b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80260340d76adbdbc716dee05e30d84b">&#9670;&nbsp;</a></span>make_allocator_reference() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto make_allocator_reference </td>
-          <td>(</td>
-          <td class="paramtype">RawAllocator &amp;&amp;&#160;</td>
-          <td class="paramname"><em>allocator</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="classfoonathan_1_1memory_1_1allocator__reference.html">allocator_reference</a>&lt;typename std::decay&lt;RawAllocator&gt;::type, Mutex&gt;
-        </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section user"><dt>Returns:\n A new \ref allocator_reference object by forwarding the allocator to the constructor and specifying a custom <code>Mutex</code>.</dt><dd></dd></dl>
 
 </div>
 </div>

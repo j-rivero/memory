@@ -43,10 +43,9 @@
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fwww.jonathanmueller.dev%2Fproject%2Fmemory%2Findex.json" alt="Project Status" class="inline"/> <a href="https://travis-ci.org/foonathan/memory"><img src="https://travis-ci.org/foonathan/memory.svg?branch=master" alt="Build Status" class="inline"/></a> <a href="https://ci.appveyor.com/project/foonathan/memory/branch/master"><img src="https://ci.appveyor.com/api/projects/status/ef654yqyoqgvl472/branch/master?svg=true" alt="Build status" class="inline"/></a> <a href="https://opensource.org/licenses/Zlib"><img src="https://img.shields.io/badge/License-Zlib-lightgrey.svg" alt="License: Zlib" class="inline"/></a></p>
-<p>The C++ STL allocator model has various flaws. For example, they are fixed to a certain type, because they are almost necessarily required to be templates. So you can't easily share a single allocator for multiple types. In addition, you can only get a copy from the containers and not the original allocator object. At least with C++11 they are allowed to be stateful and so can be made object not instance based. But still, the model has many flaws. Over the course of the years many solutions have been proposed. for example <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2271.html">EASTL</a>. This library is another. But instead of trying to change the STL, it works with the current implementation.</p>
-<p><a href="https://patreon.com/foonathan"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Patreon" class="inline"/></a></p>
-<p>If you like this project, consider supporting me on Patreon. It would really help!</p>
-<h1><a class="anchor" id="autotoc_md76"></a>
+<p>The C++ STL allocator model has various flaws. For example, they are fixed to a certain type, because they are almost necessarily required to be templates. So you can't easily share a single allocator for multiple types. In addition, you can only get a copy from the containers and not the original allocator object. At least with C++11 they are allowed to be stateful and so can be made object not instance based. But still, the model has many flaws. Over the course of the years many solutions have been proposed, for example <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2271.html">EASTL</a>. This library is another. But instead of trying to change the STL, it works with the current implementation.</p>
+<p>If you like this project, consider <a href="https://jonathanmueller.dev/support-me/">supporting me</a>. It would really help!</p>
+<h1><a class="anchor" id="autotoc_md79"></a>
 Features</h1>
 <p>New allocator concepts:</p>
 <ul>
@@ -79,7 +78,7 @@ Features</h1>
 <li>customizable error handling routines that can work with exceptions disabled</li>
 <li>everything except the STL adapters works on a freestanding environment</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md77"></a>
+<h1><a class="anchor" id="autotoc_md80"></a>
 Basic example</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -184,7 +183,7 @@ Basic example</h1>
 <div class="line">    std::merge(first.begin(), first.end(), second.begin(), second.end(), begin);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>See <code>example/</code> for more.</p>
-<h1><a class="anchor" id="autotoc_md78"></a>
+<h1><a class="anchor" id="autotoc_md81"></a>
 Installation</h1>
 <p>This library can be used as <a href="www.cmake.org">CMake</a> subdirectory. It is tested on GCC 4.8-5.0, Clang 3.5 and Visual Studio 2013. Newer versions should work too.</p>
 <ol type="1">
@@ -204,12 +203,12 @@ Installation</h1>
 <li>Call <code>find_package(foonathan_memory major.minor REQUIRED)</code> to find the library.</li>
 <li>Call <code>target_link_libraries(your_target PUBLIC foonathan_memory)</code> to link to the library and setup all required options.</li>
 </ol>
-<p>See <a href="http://foonathan.github.io/doc/memory/md_doc_installation.html">http://foonathan.github.io/doc/memory/md_doc_installation.html</a> for a detailed guide.</p>
-<h1><a class="anchor" id="autotoc_md79"></a>
+<p>See <a href="https://foonathan.net/memory/md_doc_installation.html">https://foonathan.net/memory/md_doc_installation.html</a> for a detailed guide.</p>
+<h1><a class="anchor" id="autotoc_md82"></a>
 Documentation</h1>
-<p>Full documentation can be found at <a href="http://foonathan.github.io/doc/memory">http://foonathan.github.io/doc/memory</a>.</p>
-<p>A tutorial is also available at <a href="http://foonathan.github.io/doc/memory/md_doc_tutorial.html">http://foonathan.github.io/doc/memory/md_doc_tutorial.html</a>.</p>
-<h1><a class="anchor" id="autotoc_md80"></a>
+<p>Full documentation can be found at <a href="https://foonathan.net/memory">https://foonathan.net/memory</a>.</p>
+<p>A tutorial is also available at <a href="https://foonathan.net/memory/md_doc_tutorial.html">https://foonathan.net/memory/md_doc_tutorial.html</a>.</p>
+<h1><a class="anchor" id="autotoc_md83"></a>
 RawAllocator</h1>
 <p>Below is the interface required for a <code>RawAllocator</code>, everything optional is marked:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>raw_allocator</div>
@@ -226,8 +225,8 @@ RawAllocator</h1>
 <div class="line">    std::size_t max_array_size() <span class="keyword">const</span>; <span class="comment">// optional, forwards to max_node_size()</span></div>
 <div class="line">    std::size_t max_alignment() <span class="keyword">const</span>; <span class="comment">// optional, returns maximum fundamental alignment, i.e. alignof(std::max_align_t)</span></div>
 <div class="line">};</div>
-</div><!-- fragment --><p>A <code>RawAllocator</code> only needs to be moveable, all <code>Allocator</code> classes are <code>RawAllocators</code> too. Classes not providing the interface can specialize the <code>allocator_traits</code>, read more about <a href="http://foonathan.github.io/doc/memory/md_doc_writing_allocators.html">writing allocators here</a> or about the technical details of the <a href="http://foonathan.github.io/doc/memory/md_doc_concepts.html">concept here</a>.</p>
-<h1><a class="anchor" id="autotoc_md81"></a>
+</div><!-- fragment --><p>A <code>RawAllocator</code> only needs to be moveable, all <code>Allocator</code> classes are <code>RawAllocators</code> too. Classes not providing the interface can specialize the <code>allocator_traits</code>, read more about <a href="https://foonathan.net/memory/md_doc_writing_allocators.html">writing allocators here</a> or about the technical details of the <a href="https://foonathan.net/memory/md_doc_concepts.html">concept here</a>.</p>
+<h1><a class="anchor" id="autotoc_md84"></a>
 Acknowledgements</h1>
 <p>This project is greatly supported by my <a href="https://patreon.com/foonathan">patrons</a>. In particular thanks to the individual supporters:</p>
 <ul>
@@ -248,17 +247,17 @@ Acknowledgements</h1>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
-<div class="ttc" id="aclassfoonathan_1_1memory_1_1vector_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1vector.html">foonathan::memory::vector</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:48</div></div>
+<div class="ttc" id="aclassfoonathan_1_1memory_1_1vector_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1vector.html">foonathan::memory::vector</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:47</div></div>
 <div class="ttc" id="anamespace__alias_8hpp_html"><div class="ttname"><a href="namespace__alias_8hpp.html">namespace_alias.hpp</a></div></div>
-<div class="ttc" id="astructfoonathan_1_1memory_1_1list__node__size_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1list__node__size.html">foonathan::memory::list_node_size</a></div><div class="ttdoc">Contains the node size of a node based STL container with a specific type.</div><div class="ttdef"><b>Definition:</b> container.hpp:309</div></div>
-<div class="ttc" id="aclassfoonathan_1_1memory_1_1list_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1list.html">foonathan::memory::list</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:68</div></div>
+<div class="ttc" id="astructfoonathan_1_1memory_1_1list__node__size_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1list__node__size.html">foonathan::memory::list_node_size</a></div><div class="ttdoc">Contains the node size of a node based STL container with a specific type.</div><div class="ttdef"><b>Definition:</b> container.hpp:288</div></div>
+<div class="ttc" id="aclassfoonathan_1_1memory_1_1list_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1list.html">foonathan::memory::list</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:67</div></div>
 <div class="ttc" id="atemporary__allocator_8hpp_html"><div class="ttname"><a href="temporary__allocator_8hpp.html">temporary_allocator.hpp</a></div></div>
-<div class="ttc" id="aclassfoonathan_1_1memory_1_1unordered__set_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1unordered__set.html">foonathan::memory::unordered_set</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:139</div></div>
+<div class="ttc" id="aclassfoonathan_1_1memory_1_1unordered__set_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1unordered__set.html">foonathan::memory::unordered_set</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:135</div></div>
 <div class="ttc" id="astructfoonathan_1_1memory_1_1static__allocator__storage_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1static__allocator__storage.html">foonathan::memory::static_allocator_storage</a></div><div class="ttdoc">Storage for a static_allocator.</div><div class="ttdef"><b>Definition:</b> static_allocator.hpp:33</div></div>
 <div class="ttc" id="astatic__allocator_8hpp_html"><div class="ttname"><a href="static__allocator_8hpp.html">static_allocator.hpp</a></div></div>
 <div class="ttc" id="asmart__ptr_8hpp_html"><div class="ttname"><a href="smart__ptr_8hpp.html">smart_ptr.hpp</a></div></div>
 <div class="ttc" id="acontainer_8hpp_html"><div class="ttname"><a href="container_8hpp.html">container.hpp</a></div></div>
-<div class="ttc" id="astructfoonathan_1_1memory_1_1unordered__set__node__size_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1unordered__set__node__size.html">foonathan::memory::unordered_set_node_size</a></div><div class="ttdoc">Contains the node size of a node based STL container with a specific type.</div><div class="ttdef"><b>Definition:</b> container.hpp:327</div></div>
+<div class="ttc" id="astructfoonathan_1_1memory_1_1unordered__set__node__size_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1unordered__set__node__size.html">foonathan::memory::unordered_set_node_size</a></div><div class="ttdoc">Contains the node size of a node based STL container with a specific type.</div><div class="ttdef"><b>Definition:</b> container.hpp:306</div></div>
 <div class="ttc" id="amemory__pool_8hpp_html"><div class="ttname"><a href="memory__pool_8hpp.html">memory_pool.hpp</a></div></div>
 <!-- HTML footer for doxygen 1.8.16-->
 <!-- start footer part -->

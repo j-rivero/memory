@@ -123,9 +123,6 @@ Macros</h2></td></tr>
 <tr class="memitem:gab9c74366ce94e4b30e7f8075fd46d3c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core.html#gab9c74366ce94e4b30e7f8075fd46d3c9">FOONATHAN_MEMORY_CHECK_ALLOCATION_SIZE</a></td></tr>
 <tr class="memdesc:gab9c74366ce94e4b30e7f8075fd46d3c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the allocation size will be checked, i.e.  <a href="group__core.html#gab9c74366ce94e4b30e7f8075fd46d3c9">More...</a><br /></td></tr>
 <tr class="separator:gab9c74366ce94e4b30e7f8075fd46d3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8321c1ee9ddb2e5610249e39c79cf5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core.html#gac8321c1ee9ddb2e5610249e39c79cf5f">FOONATHAN_MEMORY_THREAD_SAFE_REFERENCE</a></td></tr>
-<tr class="memdesc:gac8321c1ee9ddb2e5610249e39c79cf5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the <a class="el" href="group__core.html#gaee2f0e3847e0ab64384e5e8c8f1a7a27">foonathan::memory::default_mutex</a> will be <code>std::mutex</code> or <a class="el" href="structfoonathan_1_1memory_1_1no__mutex.html">foonathan::memory::no_mutex</a>.  <a href="group__core.html#gac8321c1ee9ddb2e5610249e39c79cf5f">More...</a><br /></td></tr>
-<tr class="separator:gac8321c1ee9ddb2e5610249e39c79cf5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadeca7ca88417f547b94c8013ee774665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core.html#gadeca7ca88417f547b94c8013ee774665">FOONATHAN_MEMORY_DEBUG_ASSERT</a></td></tr>
 <tr class="memdesc:gadeca7ca88417f547b94c8013ee774665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not internal assertions in the library are enabled.  <a href="group__core.html#gadeca7ca88417f547b94c8013ee774665">More...</a><br /></td></tr>
 <tr class="separator:gadeca7ca88417f547b94c8013ee774665"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,9 +160,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gaf7651169a0cdd3612f5d8fc7baba505b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__core.html#gaf7651169a0cdd3612f5d8fc7baba505b">make_block_allocator_t</a> = implementation_defined</td></tr>
 <tr class="memdesc:gaf7651169a0cdd3612f5d8fc7baba505b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes either a <a href="md_doc_concepts.html#concept_blockallocator">BlockAllocator</a> or a <a href="md_doc_concepts.html#concept_rawallocator">RawAllocator</a>.  <a href="group__core.html#gaf7651169a0cdd3612f5d8fc7baba505b">More...</a><br /></td></tr>
 <tr class="separator:gaf7651169a0cdd3612f5d8fc7baba505b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaee2f0e3847e0ab64384e5e8c8f1a7a27"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core.html#gaee2f0e3847e0ab64384e5e8c8f1a7a27">default_mutex</a> = <a class="el" href="structfoonathan_1_1memory_1_1no__mutex.html">no_mutex</a></td></tr>
-<tr class="memdesc:gaee2f0e3847e0ab64384e5e8c8f1a7a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default <code>Mutex</code> type used as default template paremeter in, e.g.  <a href="group__core.html#gaee2f0e3847e0ab64384e5e8c8f1a7a27">More...</a><br /></td></tr>
-<tr class="separator:gaee2f0e3847e0ab64384e5e8c8f1a7a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -292,22 +286,6 @@ Functions</h2></td></tr>
 
 <p>Whether or not the allocation size will be checked, i.e. </p>
 <p>the bad_allocation_size thrown. </p>
-
-</div>
-</div>
-<a id="gac8321c1ee9ddb2e5610249e39c79cf5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac8321c1ee9ddb2e5610249e39c79cf5f">&#9670;&nbsp;</a></span>FOONATHAN_MEMORY_THREAD_SAFE_REFERENCE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define FOONATHAN_MEMORY_THREAD_SAFE_REFERENCE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Whether or not the <a class="el" href="group__core.html#gaee2f0e3847e0ab64384e5e8c8f1a7a27">foonathan::memory::default_mutex</a> will be <code>std::mutex</code> or <a class="el" href="structfoonathan_1_1memory_1_1no__mutex.html">foonathan::memory::no_mutex</a>. </p>
 
 </div>
 </div>
@@ -495,23 +473,6 @@ Functions</h2></td></tr>
 
 <p>Takes either a <a href="md_doc_concepts.html#concept_blockallocator">BlockAllocator</a> or a <a href="md_doc_concepts.html#concept_rawallocator">RawAllocator</a>. </p>
 <p>In the first case simply aliases the type unchanged, in the second to <a class="el" href="classfoonathan_1_1memory_1_1growing__block__allocator.html">growing_block_allocator</a> (or the template in <code>BlockAllocator</code>) with the <a href="md_doc_concepts.html#concept_rawallocator">RawAllocator</a>. Using this allows passing normal <a href="md_doc_concepts.html#concept_rawallocator">RawAllocators</a> as <a href="md_doc_concepts.html#concept_blockallocator">BlockAllocators</a>. </p>
-
-</div>
-</div>
-<a id="gaee2f0e3847e0ab64384e5e8c8f1a7a27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaee2f0e3847e0ab64384e5e8c8f1a7a27">&#9670;&nbsp;</a></span>default_mutex</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="group__core.html#gaee2f0e3847e0ab64384e5e8c8f1a7a27">default_mutex</a> =  <a class="el" href="structfoonathan_1_1memory_1_1no__mutex.html">no_mutex</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The default <code>Mutex</code> type used as default template paremeter in, e.g. </p>
-<p><a class="el" href="classfoonathan_1_1memory_1_1allocator__reference.html">allocator_reference</a>. If the CMake option <a class="el" href="group__core.html#gac8321c1ee9ddb2e5610249e39c79cf5f">FOONATHAN_MEMORY_THREAD_SAFE_REFERENCE</a> is <code>true</code> and there is threading support, it is <code>std::mutex</code>, else <a class="el" href="structfoonathan_1_1memory_1_1no__mutex.html">no_mutex</a>. </p>
 
 </div>
 </div>

@@ -44,7 +44,7 @@
 <div class="contents">
 <div class="textblock"><p>This is the documentation of <code>foonathan/memory</code>.</p>
 <p>For a quick start, read the <a href="md_doc_tutorial.html">Tutorial</a> or skim the examples at the <a href="https://github.com/foonathan/memory/">Github page</a>. The concepts of this library are defined are <a href="md_doc_concepts.html">here</a>.</p>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 Features</h2>
 <p>New allocator concepts:</p>
 <ul>
@@ -76,7 +76,7 @@ Features</h2>
 <li>customizable error handling routines that can work with exceptions disabled</li>
 <li>everything except the STL adapters works on a freestanding environment</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 Basic example</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -183,7 +183,7 @@ Basic example</h2>
 <div class="line">    std::merge(first.begin(), first.end(), second.begin(), second.end(), begin);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>See <code>example/</code> for more.</p>
-<h2><a class="anchor" id="autotoc_md49"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 Installation</h2>
 <p>This library can be used as [CMake] subdirectory. It is tested on GCC 4.7-4.9, Clang 3.4-3.5 and Visual Studio 2013. Newer versions should work too.</p>
 <ol type="1">
@@ -205,7 +205,7 @@ Installation</h2>
 <li>Call <code>target_link_libraries(your_target PUBLIC foonathan_memory)</code> and activate C++11 to link to the library.</li>
 </ol>
 <p>See <a href="http://foonathan.github.io/doc/memory/md_doc_installation.html">http://foonathan.github.io/doc/memory/md_doc_installation.html</a> for a detailed guide.</p>
-<h2><a class="anchor" id="autotoc_md50"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 About this documentation</h2>
 <p>This documentation is written in a similar way as the C++ standard itself, although not that formal.</p>
 <p>Concepts are documented using the names of the template parameters, for example the following class:</p>
@@ -219,17 +219,17 @@ About this documentation</h2>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <div class="ttc" id="aclassfoonathan_1_1memory_1_1temporary__allocator_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1temporary__allocator.html">foonathan::memory::temporary_allocator</a></div><div class="ttdoc">A stateful RawAllocator that handles temporary allocations.</div><div class="ttdef"><b>Definition:</b> temporary_allocator.hpp:232</div></div>
-<div class="ttc" id="aclassfoonathan_1_1memory_1_1vector_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1vector.html">foonathan::memory::vector</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:48</div></div>
+<div class="ttc" id="aclassfoonathan_1_1memory_1_1vector_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1vector.html">foonathan::memory::vector</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:47</div></div>
 <div class="ttc" id="anamespace__alias_8hpp_html"><div class="ttname"><a href="namespace__alias_8hpp.html">namespace_alias.hpp</a></div></div>
-<div class="ttc" id="astructfoonathan_1_1memory_1_1list__node__size_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1list__node__size.html">foonathan::memory::list_node_size</a></div><div class="ttdoc">Contains the node size of a node based STL container with a specific type.</div><div class="ttdef"><b>Definition:</b> container.hpp:309</div></div>
-<div class="ttc" id="aclassfoonathan_1_1memory_1_1list_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1list.html">foonathan::memory::list</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:68</div></div>
+<div class="ttc" id="astructfoonathan_1_1memory_1_1list__node__size_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1list__node__size.html">foonathan::memory::list_node_size</a></div><div class="ttdoc">Contains the node size of a node based STL container with a specific type.</div><div class="ttdef"><b>Definition:</b> container.hpp:288</div></div>
+<div class="ttc" id="aclassfoonathan_1_1memory_1_1list_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1list.html">foonathan::memory::list</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:67</div></div>
 <div class="ttc" id="atemporary__allocator_8hpp_html"><div class="ttname"><a href="temporary__allocator_8hpp.html">temporary_allocator.hpp</a></div></div>
-<div class="ttc" id="aclassfoonathan_1_1memory_1_1unordered__set_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1unordered__set.html">foonathan::memory::unordered_set</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:139</div></div>
+<div class="ttc" id="aclassfoonathan_1_1memory_1_1unordered__set_html"><div class="ttname"><a href="classfoonathan_1_1memory_1_1unordered__set.html">foonathan::memory::unordered_set</a></div><div class="ttdoc">Alias template for an STL container that uses a certain RawAllocator.</div><div class="ttdef"><b>Definition:</b> container.hpp:135</div></div>
 <div class="ttc" id="astructfoonathan_1_1memory_1_1static__allocator__storage_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1static__allocator__storage.html">foonathan::memory::static_allocator_storage</a></div><div class="ttdoc">Storage for a static_allocator.</div><div class="ttdef"><b>Definition:</b> static_allocator.hpp:33</div></div>
 <div class="ttc" id="astatic__allocator_8hpp_html"><div class="ttname"><a href="static__allocator_8hpp.html">static_allocator.hpp</a></div></div>
 <div class="ttc" id="asmart__ptr_8hpp_html"><div class="ttname"><a href="smart__ptr_8hpp.html">smart_ptr.hpp</a></div></div>
 <div class="ttc" id="acontainer_8hpp_html"><div class="ttname"><a href="container_8hpp.html">container.hpp</a></div></div>
-<div class="ttc" id="astructfoonathan_1_1memory_1_1unordered__set__node__size_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1unordered__set__node__size.html">foonathan::memory::unordered_set_node_size</a></div><div class="ttdoc">Contains the node size of a node based STL container with a specific type.</div><div class="ttdef"><b>Definition:</b> container.hpp:327</div></div>
+<div class="ttc" id="astructfoonathan_1_1memory_1_1unordered__set__node__size_html"><div class="ttname"><a href="structfoonathan_1_1memory_1_1unordered__set__node__size.html">foonathan::memory::unordered_set_node_size</a></div><div class="ttdoc">Contains the node size of a node based STL container with a specific type.</div><div class="ttdef"><b>Definition:</b> container.hpp:306</div></div>
 <div class="ttc" id="amemory__pool_8hpp_html"><div class="ttname"><a href="memory__pool_8hpp.html">memory_pool.hpp</a></div></div>
 <!-- HTML footer for doxygen 1.8.16-->
 <!-- start footer part -->
