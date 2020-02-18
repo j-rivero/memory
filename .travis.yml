@@ -7,53 +7,8 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.8']
-      env: TOOLSET=g++-4.8 BUILD_TYPE='Debug'
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.8']
-      env: TOOLSET=g++-4.8 BUILD_TYPE='Release'
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9']
-      env: TOOLSET=g++-4.9 BUILD_TYPE='Debug'
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-4.9']
-      env: TOOLSET=g++-4.9 BUILD_TYPE='Release'
-
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5']
+          packages: ['g++-5', 'lcov']
       env: TOOLSET=g++-5 BUILD_TYPE='Debug'
-    - os: linux
-      compiler: gcc
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5']
-      env: TOOLSET=g++-5 BUILD_TYPE='Release'
-
-    - os: osx
-      compiler: clang
-      env: TOOLSET=clang++ BUILD_TYPE='Debug'
-    - os: osx
-      compiler: clang
-      env: TOOLSET=clang++ BUILD_TYPE='Release'
-
 install:
   - cd ../
 
@@ -73,7 +28,18 @@ install:
 
 script:
   - mkdir build/ && cd build/
-  - $CMAKE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_FLAGS="-Wall -Wextra -pedantic -Wno-parentheses" ../
-  - $CMAKE --build .
+  - $CMAKE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_FLAGS="--coverage -O0" -DCMAKE_LD_FLAGS="--coverage" ../
+  - VERBOSE=1 $CMAKE --build .
   - ./test/foonathan_memory_test
   - ./test/foonathan_memory_profiling 1
+
+after_script:
+  # Create lcov report
+  - lcov --capture --initial --directory .. -o app_base.info
+  - lcov --capture --directory . --output-file coverage.info
+  - lcov --remove app_base.info */test/* */example/* */tool/* --output-file app_base.info
+  - lcov --remove coverage.info */test/* */example/* */tool/* --output-file coverage.info
+  - lcov -a app_base.info -a coverage.info -o coverage.info
+  - lcov --list coverage.info
+  # Uploading report to CodeCov
+  - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
