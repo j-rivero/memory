@@ -1,9 +1,5 @@
 language: cpp
 
-addons:
- apt:
-  packages: lcov
-
 matrix:
   include:
     - os: linux
@@ -11,7 +7,7 @@ matrix:
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5']
+          packages: ['g++-5', 'lcov']
       env: TOOLSET=g++-5 BUILD_TYPE='Debug'
 install:
   - cd ../
