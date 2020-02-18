@@ -28,7 +28,7 @@ install:
 
 script:
   - mkdir build/ && cd build/
-  - $CMAKE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_FLAGS="--coverage" -DCMAKE_LD_FLAGS="--coverage" ../
+  - $CMAKE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_CXX_FLAGS="--coverage -O0" -DCMAKE_LD_FLAGS="--coverage" ../
   - VERBOSE=1 $CMAKE --build .
   - ./test/foonathan_memory_test
   - ./test/foonathan_memory_profiling 1
